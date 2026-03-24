@@ -1,0 +1,9 @@
+services:
+  gmail-agent:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - ./data:/data:ro
+      - ./secrets:/secrets:ro
+    restart: unless-stopped
